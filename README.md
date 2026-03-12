@@ -50,35 +50,6 @@ Download these sample PDF files to test the application's from .agents/workfows
 *   **Tracing**: Arize Phoenix
 
 ---
-
-### 🚀 Getting Started
-
-#### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/evaluator.git
-cd evaluator
-```
-
-#### 2. Set Up Virtual Environment
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-#### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-#### 4. Configure API Keys
-Create a `.env` file in the root directory:
-```text
-GROQ_API_KEY=your_api_key_here
-```
-
-#### 5. Run the Application
-```bash
-streamlit run app.py
 ```
 
 ---
