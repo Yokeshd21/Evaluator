@@ -1533,8 +1533,6 @@ if st.session_state.current_evaluation:
     with st.expander("View Phoenix Dashboard and Traces", expanded=False):
         if phoenix_url:
             st.markdown(f"**Dashboard URL:** [{phoenix_url}]({phoenix_url})")
-            # Embed the dashboard in an iframe
-            st.components.v1.iframe(phoenix_url, height=800, scrolling=True)
         else:
             st.warning("Phoenix Dashboard is not available.")
         
