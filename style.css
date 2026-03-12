@@ -1,0 +1,591 @@
+:root {
+    --primary-blue: #3b82f6;
+    --text-dark: #1e293b;
+    /* High-contrast charcoal */
+    --text-muted: #64748b;
+    --border-paper: #e2e8f0;
+    --bg-paper: #ffffff;
+    --bg-hover: #f8fafc;
+}
+
+/* Base App Styling */
+.stApp {
+    background: #ffffff;
+    /* Pure white 'Paper' background */
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hide default streamlit header/footer — but keep sidebar toggle */
+header[data-testid="stHeader"] {
+    background: transparent !important;
+    height: auto !important;
+}
+
+header[data-testid="stHeader"]>div {
+    background: transparent !important;
+}
+
+footer {
+    visibility: hidden;
+}
+
+/* Cursor: use normal browser default */
+
+/* ── Sidebar Toggle Button — ALWAYS visible ── */
+[data-testid="stSidebar"][aria-expanded="false"]~div button[kind="header"],
+button[kind="header"],
+[data-testid="collapsedControl"] {
+    visibility: visible !important;
+    display: flex !important;
+    position: fixed !important;
+    top: 60px !important;
+    left: 12px !important;
+    z-index: 999999 !important;
+    background: rgba(4, 11, 22, 0.85) !important;
+    border: 1px solid rgba(0, 229, 255, 0.4) !important;
+    border-radius: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+button[kind="header"]:hover,
+[data-testid="collapsedControl"]:hover {
+    background: rgba(0, 229, 255, 0.15) !important;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.5) !important;
+    transform: scale(1.1) !important;
+}
+
+button[kind="header"] svg,
+[data-testid="collapsedControl"] svg {
+    fill: #00e5ff !important;
+    width: 18px !important;
+    height: 18px !important;
+}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+    background: rgba(4, 11, 22, 0.85) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+/* Sidebar text base */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] h4,
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] span {
+    color: #e0e6ed;
+}
+
+[data-testid="stSidebar"] svg {
+    fill: #00e5ff;
+}
+
+[data-testid="stSidebarNav"] {
+    display: none;
+}
+
+/* Base App Styling */
+.glass-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    color: #1e293b;
+    /* Deep Charcoal */
+    font-family: 'Inter', sans-serif;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Metric Display enhancements - Paper Clean */
+[data-testid="stMetricValue"] {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: var(--text-dark) !important;
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: var(--text-muted) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Custom Metric Cards in Result Area */
+.metric-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-paper);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.metric-card .label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.metric-card .value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.metric-card .value.good {
+    color: #059669;
+}
+
+.metric-card .value.warn {
+    color: #d97706;
+}
+
+.metric-card .value.bad {
+    color: #dc2626;
+}
+
+/* Custom Headers - Dark for Visibility */
+h1,
+h2,
+h3,
+h4 {
+    color: #111827 !important;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.glow-text {
+    color: #111827;
+    text-shadow: none;
+}
+
+/* Badges */
+.badge {
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.badge-excellent {
+    background: rgba(0, 255, 170, 0.1);
+    color: #00ffaa;
+    border: 1px solid rgba(0, 255, 170, 0.4);
+    text-shadow: 0 0 10px rgba(0, 255, 170, 0.4);
+}
+
+.badge-strong {
+    background: rgba(0, 204, 255, 0.1);
+    color: #00ccff;
+    border: 1px solid rgba(0, 204, 255, 0.4);
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.4);
+}
+
+.badge-moderate {
+    background: rgba(255, 196, 0, 0.1);
+    color: #ffc400;
+    border: 1px solid rgba(255, 196, 0, 0.4);
+    text-shadow: 0 0 10px rgba(255, 196, 0, 0.4);
+}
+
+.badge-risk {
+    background: rgba(255, 51, 102, 0.1);
+    color: #ff3366;
+    border: 1px solid rgba(255, 51, 102, 0.4);
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.4);
+}
+
+/* Table Overrides - Restored Absolute Clean White UI */
+[data-testid="stDataFrame"],
+[data-testid="stDataEditor"] {
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 10px !important;
+    color: #000000 !important;
+}
+
+.stDataFrame table,
+.stDataEditor table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Header Styling: Solid Black Text on Light Grey */
+.stDataFrame th,
+.stDataEditor th {
+    background: #f9fafb !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+    border-bottom: 2px solid #e5e7eb !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 12px !important;
+}
+
+/* Cell Styling: Solid Black Text on White */
+.stDataFrame td,
+.stDataEditor td {
+    border-bottom: 1px solid #f3f4f6 !important;
+    color: #000000 !important;
+    padding: 10px !important;
+    background: #ffffff !important;
+}
+
+/* Ensure data editor inputs are white-on-black */
+[data-testid="stDataEditor"] input,
+[data-testid="stDataEditor"] select {
+    color: #000000 !important;
+    background: #ffffff !important;
+}
+
+/* Status Colors for direct HTML components */
+.status-yes {
+    color: #059669;
+    font-weight: bold;
+}
+
+.status-no {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* Buttons - Paper Clean Blue */
+.stButton>button {
+    background: var(--primary-blue) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2) !important;
+}
+
+.stButton>button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: rotate(45deg);
+    animation: buttonShine 3s infinite linear;
+}
+
+@keyframes buttonShine {
+    0% {
+        transform: translateX(-150%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(150%) rotate(45deg);
+    }
+}
+
+.stButton>button:hover {
+    box-shadow: 0 8px 25px rgba(0, 204, 255, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-3px) scale(1.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.stButton>button:active {
+    transform: translateY(1px) scale(0.98) !important;
+}
+
+/* ═══════════════════════════════════════════
+   PREMIUM FILE UPLOADER — style.css sync
+═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   FILE UPLOADER — Clean White Drop Zone
+═══════════════════════════════════════════ */
+[data-testid="stFileUploadDropzone"] {
+    position: relative !important;
+    background: #f9fafb !important;
+    /* Mild light grey */
+    border: 2px dashed #c8d3e0 !important;
+    border-radius: 14px !important;
+    padding: 3rem 2.5rem !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgb(255, 249, 249) !important;
+}
+
+[data-testid="stFileUploadDropzone"]:hover {
+    background: #f7f9fc !important;
+    border-color: #3b82f6 !important;
+    border-style: solid !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12) !important;
+}
+
+/* Drag-over active state */
+[data-testid="stFileUploadDropzone"]:active,
+[data-testid="stFileUploadDropzone"][data-dragging="true"] {
+    background: #eef4ff !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 8px 24px rgb(210, 211, 215) !important;
+}
+
+[data-testid="stFileUploadDropzone"] svg {
+    fill: #4b5563 !important;
+    color: #4b5563 !important;
+    filter: none !important;
+}
+
+/* Main drag-and-drop label — milder charcoal */
+[data-testid="stFileUploadDropzone"] p {
+    color: #374151 !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    font-family: 'Inter', sans-serif !important;
+    margin-top: 10px !important;
+}
+
+/* Hint text (file size limit etc.) — dark grey, readable */
+[data-testid="stFileUploadDropzone"] span:not(button span):not(button *) {
+    color: #374151 !important;
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
+}
+
+/* Browse Files Button — clean blue outline */
+[data-testid="stFileUploadDropzone"] button {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 28px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.3px !important;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.30) !important;
+    transition: all 0.2s ease !important;
+    margin-top: 10px !important;
+}
+
+[data-testid="stFileUploadDropzone"] button span,
+[data-testid="stFileUploadDropzone"] button * {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stFileUploadDropzone"] button:hover {
+    background: #2563eb !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.40) !important;
+}
+
+/* Uploaded file info chips */
+.uploadedFileName,
+.uploadedFileSize,
+[data-testid="stFileUploaderFileName"],
+[data-testid="stFileUploaderFileSize"] {
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+
+
+
+/* Inputs & Text Areas - Mild & Clean */
+.stTextInput>div>div>input,
+.stSelectbox>div>div>div,
+.stTextArea textarea {
+    background: #f9fafb !important;
+    /* Mild light grey */
+    border: 1px solid #e2e8f0 !important;
+    /* Softer border */
+    color: #1e293b !important;
+    /* Deep charcoal text */
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    transition: all 0.2s ease !important;
+}
+
+.stTextInput>div>div>input:focus,
+.stSelectbox>div>div>div:focus,
+.stTextArea textarea:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    outline: none !important;
+}
+
+/* Spinner Text Styling - Make spinner text black and visible */
+[data-testid="stSpinner"] {
+    color: #000000 !important;
+}
+
+[data-testid="stSpinner"] * {
+    color: #000000 !important;
+}
+
+[data-testid="stSpinner"] p,
+[data-testid="stSpinner"] span {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+/* Make st.success text dark and bold for visibility on white backgrounds */
+.stAlert-success,
+[data-testid="stAlertSuccess"] {
+    color: #0a3a0a !important;
+    background: #e6ffe6 !important;
+    font-weight: 700 !important;
+    border: 1.5px solid #10b981 !important;
+    border-radius: 8px !important;
+}
+
+/* Make file size and name text in uploader always dark */
+[data-testid="stFileUploadDropzone"] .uploadedFileName,
+[data-testid="stFileUploadDropzone"] .uploadedFileSize,
+[data-testid="stFileUploadDropzone"] .fileName,
+[data-testid="stFileUploadDropzone"] .fileSize,
+[data-testid="stFileUploadDropzone"] .uploadedFileDetails {
+    color: #111 !important;
+    background: #fff !important;
+    font-weight: 700 !important;
+}
+
+/* Center and enlarge the sidebar Clear/Reset button */
+[data-testid="stSidebar"] .stButton {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto 24px auto !important;
+}
+
+[data-testid="stSidebar"] .stButton>button {
+    min-width: 220px !important;
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    padding: 20px 0 !important;
+    border-radius: 10px !important;
+    background: linear-gradient(90deg, #10b981 0%, #22d3ee 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 2px 12px rgba(16, 185, 129, 0.10) !important;
+    transition: all 0.2s;
+}
+
+[data-testid="stSidebar"] .stButton>button:hover {
+    background: linear-gradient(90deg, #059669 0%, #0ea5e9 100%) !important;
+    color: #fff !important;
+    transform: scale(1.04);
+}
+
+/* Shimmer Animation */
+.shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+    animation: shimmerEffect 2s infinite linear;
+}
+
+@keyframes shimmerEffect {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+/* Glassmorphism Blockquote for Narrative Drafts */
+blockquote {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-left: 4px solid #3b82f6 !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05) !important;
+    color: #1f2937 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    font-style: italic;
+
+    /* Compression for Lists in Alerts and Blockquotes */
+    .stAlert li,
+    blockquote li {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        line-height: 1.2 !important;
+    }
+
+    .stAlert p,
+    blockquote p {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .stAlert ul,
+    .stAlert ol,
+    blockquote ul,
+    blockquote ol {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }

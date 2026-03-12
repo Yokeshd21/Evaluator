@@ -1,0 +1,15 @@
+streamlit
+groq
+pandas
+PyPDF2
+python-docx
+openpyxl
+xlsxwriter
+plotly
+fpdf
+python-dotenv
+arize-phoenix
+openinference-instrumentation-groq
+opentelemetry-api
+sentence-transformers
+arize-phoenix-otel
