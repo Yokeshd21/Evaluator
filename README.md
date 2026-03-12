@@ -95,12 +95,4 @@ streamlit run app.py
 *   `tracing.py`: Arize Phoenix instrumentation and setup.
 *   `.gitignore`: Pre-configured to ignore local logs and byte-code.
 
----
 
-### 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-**Built with ❤️ for Operational Excellence.**
