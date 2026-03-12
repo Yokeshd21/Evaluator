@@ -37,7 +37,7 @@ Download these sample PDF files to test the application's evaluation capabilitie
 *   [📄 High-Performer (Operations)](assets/Sample_Employee_Narrative_Operations.pdf)
 *   [📄 Mid-Performer (Operations)](assets/Employee_Narrative_Medium_Performer.pdf)
 *   [📄 Poor-Performer (Operations)](assets/Employee_Narrative_Poor_Performer.pdf)
-*   [📄 Research & Innovation Sample](assets/Sample_Employee_Narrative_Research_Innovation.pdf)
+*   [📄 Company Rubric](.agents/workflows/Detailed_Structured_Employee_Performance_Rubric_Research_Innovation (1).docx)
 
 **Example Content Snapshot:**
 > "During the Q3 rollout, the employee successfully managed 15 high-priority tickets with a 100% resolution rate. They followed the new security protocols strictly and documented all changes in the shared log..."
