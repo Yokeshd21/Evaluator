@@ -23,6 +23,11 @@ def extract_text(file):
     file_type = file.name.split('.')[-1].lower()
     text = ""
     
+    # Check for empty files
+    if file.size == 0:
+        st.warning(f"⚠️ File '{file.name}' is empty.")
+        return ""
+    
     try:
         if file_type == 'txt':
             text = file.getvalue().decode('utf-8')
