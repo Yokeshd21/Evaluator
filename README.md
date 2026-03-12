@@ -32,10 +32,9 @@ Team Collaboration,Support for peers and shared goals,0.10
 Continuous Improvement,Proactive effort to learn and grow,0.10
 ```
 
-#### 2. Sample Behavioral Narratives (`assets/`)
-Download these sample PDF files to test the application's evaluation capabilities:
-*   [📄 Employee Narrative]
-*   [📄 Company Rubric](agents/workflows/Detailed_Structured_Employee_Performance_Rubric_Research_Innovation(1).docx)
+#### 2. Sample Behavioral Narratives (`.agent/workflow/`)
+Download these sample PDF files to test the application's from .agents/workfows
+*  Get the files from the .agents/workflow
 
 **Example Content Snapshot:**
 > "During the Q3 rollout, the employee successfully managed 15 high-priority tickets with a 100% resolution rate. They followed the new security protocols strictly and documented all changes in the shared log..."
