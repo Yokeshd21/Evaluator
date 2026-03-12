@@ -49,10 +49,6 @@ Download these sample PDF files to test the application's from .agents/workfows
 *   **Charts**: Plotly (Compliance Radar & Progress Tracking)
 *   **Tracing**: Arize Phoenix
 
----
-```
-
----
 
 ### 📂 Project Structure
 
@@ -62,5 +58,10 @@ Download these sample PDF files to test the application's from .agents/workfows
 *   `utils.py`: Utility functions for PDF/Excel/PDF processing.
 *   `tracing.py`: Arize Phoenix instrumentation and setup.
 *   `.gitignore`: Pre-configured to ignore local logs and byte-code.
+
+### 🛠️ Deployment
+
+The deployed application can be accessed using the link below:
+[https://evaluator-audit.streamlit.app/]
 
 
